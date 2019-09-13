@@ -11,7 +11,7 @@ mainpagetest::mainpagetest(QWidget*parent):
     x=290;
     time=startTimer(500);
 }
-void mainpagetest::paintEvent(QPaintEvent *event)
+void mainpagetest::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     if(!flag){
@@ -43,11 +43,11 @@ void mainpagetest::timerEvent(QTimerEvent *event)
 {
     if(event->timerId()==time&&flag!=0)
     {switch(flag){
-    case 1:{if(snake1->overornot()) {snake1->close();this->show();flag=0;}break;}
-    case 2:{if(snake2->overornot()) {snake2->close();this->show();flag=0;}break;}
-    case 3:{if(snake3->overornot()) {snake3->close();this->show();flag=0;}break;}
-    case 4:{if(snake4->overornot()) {snake4->close();this->show();flag=0;}break;}
-    case 5:{if(snake5->overornot()) {snake5->close();this->show();flag=0;}break;}
+    case 1:{if(snake1->overornot()) {this->show();snake1->close();flag=0;}break;}
+    case 2:{if(snake2->overornot()) {this->show();snake2->close();flag=0;}break;}
+    case 3:{if(snake3->overornot()) {this->show();snake3->close();flag=0;}break;}
+    case 4:{if(snake4->overornot()) {this->show();snake4->close();flag=0;}break;}
+    case 5:{if(snake5->overornot()) {this->show();snake5->close();flag=0;}break;}
     }}
 
 }
@@ -73,11 +73,11 @@ void mainpagetest::keyPressEvent(QKeyEvent *key)
 void mainpagetest::judge()
 {
     switch (flag) {
-    case 1:{this->hide();snake1->rebegin(); snake1->show();break;}
-    case 2:{this->hide();snake2->rebegin(); snake2->show();break;}
-    case 3:{this->hide();snake3->rebegin(); snake3->show();break;}
-    case 4:{this->hide();snake4->rebegin(); snake4->show();break;}
-    case 5:{this->hide();snake5->rebegin(); snake5->show();break;}
+    case 1:{snake1->rebegin(); snake1->show();this->hide();break;}
+    case 2:{snake2->rebegin(); snake2->show();this->hide();break;}
+    case 3:{snake3->rebegin(); snake3->show();this->hide();break;}
+    case 4:{snake4->rebegin(); snake4->show();this->hide();break;}
+    case 5:{snake5->rebegin(); snake5->show();this->hide();break;}
     default:;
     }
 }

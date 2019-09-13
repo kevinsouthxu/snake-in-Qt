@@ -44,6 +44,8 @@ void mysnakefoodtest::paintEvent(QPaintEvent *event)
        painter.drawRect(30,30,15,870);
        painter.drawRect(485,30,15,870);
        painter.drawRect(30,885,470,15);
+       painter.setBrush(Qt::white);
+       painter.drawRect(530,100,920,400);
        //显示开始、结束
        QFont font1("Microsoft YaHei",12);
        painter.setFont(font1);

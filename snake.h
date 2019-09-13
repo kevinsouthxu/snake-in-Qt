@@ -18,6 +18,7 @@ public:
     int returnscore(){return score;}
     QRect returnhead(){return SnakeRect[0];}
     QRect* returnbody(){return SnakeRect;}
+    QRect returntail(){return SnakeRect[Snakelen-1];}
     int returnlens(){return Snakelen;}
     int direction;
     int notletthesnakegoback;
@@ -28,6 +29,7 @@ public:
     bool isOver;
     bool isPause;
     bool istrulyover;
+    Snake &operator=(const Snake &snake);
 public slots:
     void Snake_update();
 protected:

@@ -99,3 +99,22 @@ void Snake::rebegin()
     istrulyover=false;
     isRun=false;
 }
+Snake &Snake::operator=(const Snake &snaketemp)
+{
+    if(this!=&snaketemp)
+    {
+        this->isRun=snaketemp.isRun;this->isOver=snaketemp.isOver;
+        this->isPause=snaketemp.isPause;this->istrulyover=snaketemp.istrulyover;
+        this->direction=snaketemp.direction;this->notletthesnakegoback=snaketemp.notletthesnakegoback;
+        this->x=snaketemp.x;this->y=snaketemp.y;
+        this->x1=snaketemp.x1;this->x2=snaketemp.x2;
+        this->y1=snaketemp.y1;this->y2=snaketemp.y2;
+        this->time=snaketemp.time;this->score=snaketemp.score;this->Snakelen=snaketemp.Snakelen;
+        this->SnakeRect=new QRect[this->Snakelen];
+        for(int i=0;i<snaketemp.Snakelen;i++)
+            this->SnakeRect[i]=snaketemp.SnakeRect[i];
+        this->SnakeHeard=snaketemp.SnakeHeard;
+        return *this;
+    }
+    return *this;
+}

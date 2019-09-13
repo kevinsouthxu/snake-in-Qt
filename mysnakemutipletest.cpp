@@ -48,6 +48,8 @@ void mysnakemutipletest::paintEvent(QPaintEvent *event)
        painter.drawRect(30,30,15,870);
        painter.drawRect(485,30,15,870);
        painter.drawRect(30,885,470,15);
+       painter.setBrush(Qt::white);
+       painter.drawRect(530,100,920,400);
        //显示开始、结束
        QFont font1("Microsoft YaHei",12);
        painter.setFont(font1);
@@ -59,10 +61,10 @@ void mysnakemutipletest::paintEvent(QPaintEvent *event)
        painter.setFont(font2);
        painter.setPen(Qt::black);
        painter.setBrush(Qt::black);
-       painter.drawText(502,300,scoreLabel);
-       painter.drawText(502,400,scoreLabel1);
-       painter.drawText(722,300,QString::number(snake1.returnscore()));
-       painter.drawText(722,400,QString::number(snake2.returnscore()));
+       painter.drawText(542,300,scoreLabel);
+       painter.drawText(542,400,scoreLabel1);
+       painter.drawText(762,300,QString::number(snake1.returnscore()));
+       painter.drawText(762,400,QString::number(snake2.returnscore()));
        painter.drawText(622,500,"press p to pause");
        //画蛇头
        painter.setPen(Qt::black);
